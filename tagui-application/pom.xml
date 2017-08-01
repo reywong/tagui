@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.reywong.tool</groupId>
+        <artifactId>a-application</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>stlthemeendcost-stljob</artifactId>
+    <packaging>pom</packaging>
+    <properties>
+        <skip_maven_deploy>true</skip_maven_deploy>
+    </properties>
+
+    <modules>
+        <module>YTO_SLT_SignJdbc_Dlv_Job</module>
+        <module>YTO_Stl_27Bill_Job</module>
+        <module>YTO_Stl_27GenSubBill_Job</module>
+        <module>YTO_Stl_DeliveryData_Job</module>
+        <module>YTO_Stl_Dlv_InforServiceFee_InNC_Job</module>
+        <module>YTO_Stl_Dlv_InforServiceFee_Job</module>
+        <module>YTO_Stl_Income_BillJob</module>
+        <module>YTO_Stl_InputData_Job</module>
+        <module>YTO_Stl_ReceiptSignRedis_Job</module>
+        <module>YTO_Stl_ReSign_Job</module>
+        <module>YTO_Stl_SignBackDate_N_Job</module>
+        <module>YTO_Stl_SignData_Job</module>
+        <module>YTO_STL_SignJdbc_AddDlv_Job</module>
+        <module>YTO_STL_SignJdbc_DlvOper_Job</module>
+        <module>YTO_STL_SignJdbc_Oper_Job</module>
+        <module>YTO_STL_SignJdbc_Sppt_Job</module>
+        <module>YTO_Stl_SignRedis_N_Job</module>
+        <module>YTO_Stl_TakingRedis_N_Job</module>
+        <module>YTO_Stl_TakingData_N_Job</module>
+        <module>YTO_StlJob</module>
+    </modules>
+
+
+</project>
