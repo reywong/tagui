@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" threshold="null" debug="null">
+
+    <!--控制台-->
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[yxtc-core]%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+
+    <!--app的日志-->
+    <appender name="appAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${catalina.home}/data/applogs/ns-manager/logs/app.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[yxtc-core]%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <!--mybatis日志-->
+    <appender name="mybatisAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${catalina.home}/data/applogs/ns-manager/logs/mybatis.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[yxtc-core]%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <!--mybatisSpring日志-->
+    <appender name="mybatisSpringAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${catalina.home}/data/applogs/ns-manager/logs/mybatisSpring.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[yxtc-core]%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <!--访问日志-->
+    <appender name="illegalAccessAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${catalina.home}/data/applogs/ns-manager/logs/illegalAccess.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[yxtc-core]%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <!--错误日志-->
+    <appender name="errorAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${catalina.home}/data/applogs/ns-manager/logs/error.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[yxtc-core]%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+
+    <!--mybatis-->
+    <logger name="org.apache.ibatis" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="mybatisAppender"/>
+    </logger>
+
+
+    <!--spring-->
+    <logger name="org.mybatis.spring" additivity="false">
+        <level value="WARN"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="mybatisSpringAppender"/>
+    </logger>
+
+    <!--sql-->
+    <logger name="java.sql">
+        <level value="WARN"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <!--jms-->
+    <logger name="org.springframework.jms">
+        <level value="ERROR"/>
+    </logger>
+
+
+    <logger name="org.springframework">
+        <level value="INFO"/>
+    </logger>
+
+
+    <!--访问服务器的日志-->
+    <logger name="org.springframework.web.servlet.DispatcherServlet" additivity="false">
+        <level value="WARN"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="illegalAccessAppender"/>
+    </logger>
+
+    <root>
+        <level value="DEBUG"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="errorAppender"/>
+    </root>
+
+</log4j:configuration>

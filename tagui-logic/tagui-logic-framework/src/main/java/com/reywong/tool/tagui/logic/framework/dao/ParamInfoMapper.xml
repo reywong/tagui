@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yxtc.framework.platform.mapper.framework.ParamInfoMapper">
+    <resultMap id="BaseResultMap" type="com.yxtc.framework.platform.pojo.framework.ParamInfo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="paramtypeid" property="paramtypeid" jdbcType="VARCHAR"/>
+        <result column="paramtypename" property="paramtypename" jdbcType="VARCHAR"/>
+        <result column="paramkey" property="paramkey" jdbcType="VARCHAR"/>
+        <result column="paramvalue" property="paramvalue" jdbcType="VARCHAR"/>
+        <result column="paramtext" property="paramtext" jdbcType="VARCHAR"/>
+        <result column="usetype" property="usetype" jdbcType="VARCHAR"/>
+        <result column="state" property="state" jdbcType="VARCHAR"/>
+        <result column="createpersonid" property="createpersonid" jdbcType="VARCHAR"/>
+        <result column="createtime" property="createtime" jdbcType="VARCHAR"/>
+        <result column="updatetime" property="updatetime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, paramtypeid, paramtypename, paramkey, paramvalue, paramtext, usetype, state, 
+    createpersonid, createtime, updatetime
+  </sql>
+
+    <!--查询-->
+    <select id="select" resultType="com.yxtc.framework.platform.pojo.framework.ParamInfo"
+            parameterType="com.yxtc.framework.platform.pojo.framework.ParamInfo">
+        select
+        <include refid="Base_Column_List"/>
+        from yxtc_framework_paraminfo
+        where state='1'
+        <if test="paramtypename!=null and paramtypename!=''">
+            and paramtypename like CONCAT('%','${paramtypename}','%' )
+        </if>
+        <if test="paramvalue!=null and paramvalue!=''">
+            and paramvalue like CONCAT('%','${paramvalue}','%' )
+        </if>
+        order by paramtypeid,paramkey
+        <if test="startNum!=null">
+            limit ${startNum},${rows}
+        </if>
+    </select>
+
+    <select id="selectMaxNum" resultType="int" parameterType="com.yxtc.framework.platform.pojo.framework.ParamInfo">
+        select
+        count(1) as total
+        from yxtc_framework_paraminfo u
+        where state='1'
+        <if test="paramtypename!=null and paramtypename!=''">
+            and paramtypename like CONCAT('%','${paramtypename}','%' )
+        </if>
+        <if test="paramvalue!=null and paramvalue!=''">
+            and paramvalue like CONCAT('%','${paramvalue}','%' )
+        </if>
+
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from yxtc_framework_paraminfo
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <!--根据参数类型获取参数信息-->
+    <select id="getParamInfoByParamTypeId" resultMap="BaseResultMap" parameterType="String">
+        select
+        <include refid="Base_Column_List"/>
+        from yxtc_framework_paraminfo
+        where state='1' and usetype='1' and paramtypeid=#{paramtypeid}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yxtc_framework_paraminfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.yxtc.framework.platform.pojo.framework.ParamInfo">
+    insert into yxtc_framework_paraminfo (id, paramtypeid, paramtypename, 
+      paramkey, paramvalue, paramtext, 
+      usetype, state, createpersonid, 
+      createtime, updatetime)
+    values (#{id,jdbcType=INTEGER}, #{paramtypeid,jdbcType=VARCHAR}, #{paramtypename,jdbcType=VARCHAR}, 
+      #{paramkey,jdbcType=VARCHAR}, #{paramvalue,jdbcType=VARCHAR}, #{paramtext,jdbcType=VARCHAR}, 
+      #{usetype,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{createpersonid,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=VARCHAR}, #{updatetime,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.yxtc.framework.platform.pojo.framework.ParamInfo">
+        insert into yxtc_framework_paraminfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="paramtypeid != null">
+                paramtypeid,
+            </if>
+            <if test="paramtypename != null">
+                paramtypename,
+            </if>
+            <if test="paramkey != null">
+                paramkey,
+            </if>
+            <if test="paramvalue != null">
+                paramvalue,
+            </if>
+            <if test="paramtext != null">
+                paramtext,
+            </if>
+            <if test="usetype != null">
+                usetype,
+            </if>
+            <if test="state != null">
+                state,
+            </if>
+            <if test="createpersonid != null">
+                createpersonid,
+            </if>
+            <if test="createtime != null">
+                createtime,
+            </if>
+            <if test="updatetime != null">
+                updatetime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="paramtypeid != null">
+                #{paramtypeid,jdbcType=VARCHAR},
+            </if>
+            <if test="paramtypename != null">
+                #{paramtypename,jdbcType=VARCHAR},
+            </if>
+            <if test="paramkey != null">
+                #{paramkey,jdbcType=VARCHAR},
+            </if>
+            <if test="paramvalue != null">
+                #{paramvalue,jdbcType=VARCHAR},
+            </if>
+            <if test="paramtext != null">
+                #{paramtext,jdbcType=VARCHAR},
+            </if>
+            <if test="usetype != null">
+                #{usetype,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="createpersonid != null">
+                #{createpersonid,jdbcType=VARCHAR},
+            </if>
+            <if test="createtime != null">
+                #{createtime,jdbcType=VARCHAR},
+            </if>
+            <if test="updatetime != null">
+                #{updatetime,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yxtc.framework.platform.pojo.framework.ParamInfo">
+        update yxtc_framework_paraminfo
+        <set>
+            <if test="paramtypeid != null">
+                paramtypeid = #{paramtypeid,jdbcType=VARCHAR},
+            </if>
+            <if test="paramtypename != null">
+                paramtypename = #{paramtypename,jdbcType=VARCHAR},
+            </if>
+            <if test="paramkey != null">
+                paramkey = #{paramkey,jdbcType=VARCHAR},
+            </if>
+            <if test="paramvalue != null">
+                paramvalue = #{paramvalue,jdbcType=VARCHAR},
+            </if>
+            <if test="paramtext != null">
+                paramtext = #{paramtext,jdbcType=VARCHAR},
+            </if>
+            <if test="usetype != null">
+                usetype = #{usetype,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                state = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="createpersonid != null">
+                createpersonid = #{createpersonid,jdbcType=VARCHAR},
+            </if>
+            <if test="createtime != null">
+                createtime = #{createtime,jdbcType=VARCHAR},
+            </if>
+            <if test="updatetime != null">
+                updatetime = #{updatetime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.yxtc.framework.platform.pojo.framework.ParamInfo">
+    update yxtc_framework_paraminfo
+    set paramtypeid = #{paramtypeid,jdbcType=VARCHAR},
+      paramtypename = #{paramtypename,jdbcType=VARCHAR},
+      paramkey = #{paramkey,jdbcType=VARCHAR},
+      paramvalue = #{paramvalue,jdbcType=VARCHAR},
+      paramtext = #{paramtext,jdbcType=VARCHAR},
+      usetype = #{usetype,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      createpersonid = #{createpersonid,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=VARCHAR},
+      updatetime = #{updatetime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

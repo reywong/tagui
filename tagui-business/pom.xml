@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.reywong.tool</groupId>
+        <artifactId>tagui-application</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>tagui-admin</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>tagui-admin</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <environment>sit</environment>
+        <skip_maven_deploy>true</skip_maven_deploy>
+    </properties>
+    <dependencies>
+
+    </dependencies>
+
+
+    <build>
+        <finalName>tagui-admin</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+
+            <resource>
+                <directory>config/${environment}</directory>
+                <filtering>true</filtering>
+            </resource>
+
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <!-- 不同环境下使用的配置文件路径 -->
+    <profiles>
+        <profile>
+            <id>sit</id>
+            <properties>
+                <environment>sit</environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <environment>uat</environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat2</id>
+            <properties>
+                <environment>uat2</environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+            <properties>
+                <environment>release</environment>
+            </properties>
+        </profile>
+    </profiles>
+
+
+</project>

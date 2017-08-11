@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yxtc.framework.platform.mapper.framework.MenuRightMapper">
+    <resultMap id="BaseResultMap" type="com.yxtc.framework.platform.pojo.framework.MenuRight">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="roleid" property="roleid" jdbcType="VARCHAR"/>
+        <result column="menuid" property="menuid" jdbcType="VARCHAR"/>
+        <result column="menuinfoid" property="menuinfoid" jdbcType="VARCHAR"/>
+        <result column="righttype" property="righttype" jdbcType="VARCHAR"/>
+        <result column="state" property="state" jdbcType="VARCHAR"/>
+        <result column="createdatetime" property="createdatetime" jdbcType="VARCHAR"/>
+        <result column="updatedatetime" property="updatedatetime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, roleid, menuid, menuinfoid, righttype, state, createdatetime, updatedatetime
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from yxtc_framework_menuright
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <!--查询-->
+    <select id="select" resultMap="BaseResultMap" parameterType="com.yxtc.framework.platform.pojo.framework.MenuRight">
+        select
+        <include refid="Base_Column_List"/>
+        from yxtc_framework_menuright
+        where state='1'
+        <if test="id!=null">
+            and id = #{id,jdbcType=INTEGER}
+        </if>
+        <if test="roleid!=null">
+            and roleid = #{roleid}
+        </if>
+
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yxtc_framework_menuright
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+    <delete id="deleteByMenuInfoId" parameterType="java.lang.String">
+        delete from yxtc_framework_menuright
+        where menuinfoid = #{menuinfoid}
+    </delete>
+
+    <delete id="deleteByMenuId" parameterType="java.lang.String">
+        delete from yxtc_framework_menuright
+        where menuid = #{menuid}
+    </delete>
+
+    <insert id="insert" parameterType="com.yxtc.framework.platform.pojo.framework.MenuRight">
+    insert into yxtc_framework_menuright (id, roleid, menuid, 
+      menuinfoid, righttype, state, 
+      createdatetime, updatedatetime)
+    values (#{id,jdbcType=INTEGER}, #{roleid,jdbcType=VARCHAR}, #{menuid,jdbcType=VARCHAR}, 
+      #{menuinfoid,jdbcType=VARCHAR}, #{righttype,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, 
+      #{createdatetime,jdbcType=VARCHAR}, #{updatedatetime,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.yxtc.framework.platform.pojo.framework.MenuRight">
+        insert into yxtc_framework_menuright
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="roleid != null">
+                roleid,
+            </if>
+            <if test="menuid != null">
+                menuid,
+            </if>
+            <if test="menuinfoid != null">
+                menuinfoid,
+            </if>
+            <if test="righttype != null">
+                righttype,
+            </if>
+            <if test="state != null">
+                state,
+            </if>
+            <if test="createdatetime != null">
+                createdatetime,
+            </if>
+            <if test="updatedatetime != null">
+                updatedatetime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="roleid != null">
+                #{roleid,jdbcType=VARCHAR},
+            </if>
+            <if test="menuid != null">
+                #{menuid,jdbcType=VARCHAR},
+            </if>
+            <if test="menuinfoid != null">
+                #{menuinfoid,jdbcType=VARCHAR},
+            </if>
+            <if test="righttype != null">
+                #{righttype,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="createdatetime != null">
+                #{createdatetime,jdbcType=VARCHAR},
+            </if>
+            <if test="updatedatetime != null">
+                #{updatedatetime,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yxtc.framework.platform.pojo.framework.MenuRight">
+        update yxtc_framework_menuright
+        <set>
+            <if test="roleid != null">
+                roleid = #{roleid,jdbcType=VARCHAR},
+            </if>
+            <if test="menuid != null">
+                menuid = #{menuid,jdbcType=VARCHAR},
+            </if>
+            <if test="menuinfoid != null">
+                menuinfoid = #{menuinfoid,jdbcType=VARCHAR},
+            </if>
+            <if test="righttype != null">
+                righttype = #{righttype,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                state = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="createdatetime != null">
+                createdatetime = #{createdatetime,jdbcType=VARCHAR},
+            </if>
+            <if test="updatedatetime != null">
+                updatedatetime = #{updatedatetime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.yxtc.framework.platform.pojo.framework.MenuRight">
+    update yxtc_framework_menuright
+    set roleid = #{roleid,jdbcType=VARCHAR},
+      menuid = #{menuid,jdbcType=VARCHAR},
+      menuinfoid = #{menuinfoid,jdbcType=VARCHAR},
+      righttype = #{righttype,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      createdatetime = #{createdatetime,jdbcType=VARCHAR},
+      updatedatetime = #{updatedatetime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <!--根据userid获取用户权限-->
+    <select id="getUserRight" parameterType="String" resultType="Map">
+        select ui.userid,ur.roleid,mi.menuinfoid,mi.righttype from
+(select id,userid from yxtc_framework_userinfo where state='1' and userid=#{userid}) as ui
+inner join
+(select userid,roleid from yxtc_framework_userrole where state='1') as ur on ui.id=ur.userid
+inner join
+(select roleid,menuinfoid,righttype from yxtc_framework_menuright where state='1') as mi on ur.roleid=mi.roleid
+    </select>
+</mapper>

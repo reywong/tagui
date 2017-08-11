@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr/dwr20.dtd">
+<!-- 通用dwr配置 -->
+<dwr>
+    <allow>
+        <!--目录管理-->
+        <create javascript="MenuInfoAction" creator="spring">
+            <param name="beanName" value="menuInfoAction"></param>
+        </create>
+        <!--用户角色管理-->
+        <create javascript="UserRoleAction" creator="spring">
+            <param name="beanName" value="userRoleAction"></param>
+        </create>
+        <!--用户信息管理-->
+        <create javascript="UserInfoAction" creator="spring">
+            <param name="beanName" value="userInfoAction"></param>
+        </create>
+        <!--参数信息管理-->
+        <create javascript="ParamInfoAction" creator="spring">
+            <param name="beanName" value="paramInfoAction"></param>
+        </create>
+        <!--角色管理-->
+        <create javascript="RoleInfoAction" creator="spring">
+            <param name="beanName" value="roleInfoAction"></param>
+        </create>
+        <!--目录权限管理-->
+        <create javascript="MenuRightAction" creator="spring">
+            <param name="beanName" value="menuRightAction"></param>
+        </create>
+
+        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.Menu"></convert>
+        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.MenuInfo"></convert>
+        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.UserRole"></convert>
+        <convert converter="bean" match="com.yxtc.framework.platform.pojo.ReturnInfoBean"></convert>
+        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.ParamInfo"></convert>
+        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.UserInfo"></convert>
+        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.RoleInfo"></convert>
+        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.MenuRight"></convert>
+
+    </allow>
+    <signatures>
+        <![CDATA[
+                import java.util.ArrayList;
+                import java.util.List;
+                import java.util.HashMap;
+                import java.util.Map;
+                import java.lang.Integer;
+                import java.lang.String;
+        ]]>
+    </signatures>
+</dwr>
