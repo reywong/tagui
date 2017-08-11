@@ -3,61 +3,33 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>stlthemeendcost-business</artifactId>
-        <groupId>cn.com.yto56.coresystem.stl</groupId>
+        <artifactId>tagui-business</artifactId>
+        <groupId>com.reywong.tool</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>stlthemeendcost-business-matforstl</artifactId>
+    <artifactId>tagui-business-tag</artifactId>
     <packaging>jar</packaging>
     <properties>
         <skip_maven_deploy>true</skip_maven_deploy>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>net.sf.json-lib</groupId>
-            <artifactId>json-lib</artifactId>
-            <version>${net.sf.json-lib}</version>
-            <classifier>jdk15</classifier>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-logic-matforstl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-logic-matbasedata</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-logic-matactivate</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-logic-mdmbasedata</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-stl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-mat</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>serverframework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
 </project>

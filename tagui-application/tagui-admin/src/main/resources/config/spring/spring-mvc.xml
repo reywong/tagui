@@ -14,7 +14,7 @@
 
     <!-- 扫描controller（controller层注入） -->
     <context:annotation-config/>
-    <context:component-scan base-package="com.yxtc.framework.platform.controller"/>
+    <context:component-scan base-package="com.reywong.tool.tagui.business.framework.controller"/>
 
     <!--访问静态资源-->
     <mvc:annotation-driven/>
@@ -64,9 +64,4 @@
         <property name="maxInMemorySize" value="40960"/>
     </bean>
 
-    <!-- 启用shrio授权注解拦截方式 -->
-    <!--<aop:config proxy-target-class="true"></aop:config>-->
-    <!--<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">-->
-    <!--<property name="securityManager" ref="securityManager"/>-->
-    <!--</bean>-->
 </beans>

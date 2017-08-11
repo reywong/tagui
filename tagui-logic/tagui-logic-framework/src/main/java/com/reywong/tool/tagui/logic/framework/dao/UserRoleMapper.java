@@ -1,6 +1,6 @@
 package com.reywong.tool.tagui.logic.framework.dao;
 
-import com.yxtc.framework.platform.pojo.framework.UserRole;
+import com.reywong.tool.tagui.logic.framework.domain.framework.UserRole;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

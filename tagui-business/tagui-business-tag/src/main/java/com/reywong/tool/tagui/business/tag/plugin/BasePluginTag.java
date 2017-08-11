@@ -19,7 +19,7 @@ public class BasePluginTag extends TagSupport {
             StringBuffer html = new StringBuffer();
             String path = ((HttpServletRequest) this.pageContext.getRequest()).getContextPath();
             if (basePath == null || basePath.trim().equals("")) {
-                basePath = "/pages";
+                basePath = "/resources";
             } else {
                 basePath = basePath.startsWith("/") ? basePath : "/" + basePath;
                 basePath = basePath.endsWith("/") ? basePath.substring(0, basePath.length() - 1) : basePath;

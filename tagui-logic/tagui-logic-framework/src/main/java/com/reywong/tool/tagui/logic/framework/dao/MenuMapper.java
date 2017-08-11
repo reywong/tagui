@@ -1,6 +1,6 @@
 package com.reywong.tool.tagui.logic.framework.dao;
 
-import com.yxtc.framework.platform.pojo.framework.Menu;
+import com.reywong.tool.tagui.logic.framework.domain.framework.Menu;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -1,14 +1,11 @@
 <!DOCTYPE html>
+<%@include file="/include/header.jsp" %>
 <html>
-
 <head>
-
-  <
-
+    <tagUI:basePlugin title="welcome to tagUI"/>
 </head>
 
 <body class="gray-bg">
-
     <div class="loginColumns animated fadeInDown">
         <div class="row">
 

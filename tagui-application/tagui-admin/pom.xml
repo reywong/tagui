@@ -3,15 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>cn.com.yto56.coresystem.stl</groupId>
-        <artifactId>stlthemeendcost-application</artifactId>
+        <groupId>com.reywong.tool</groupId>
+        <artifactId>tagui-application</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>stlthemeendcost-stl</artifactId>
+    <artifactId>tagui-admin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>stlthemeendcost-stl</name>
+    <name>tagui-admin</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -20,241 +20,83 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
-        <!--start struts2-->
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-spring-plugin</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ognl</groupId>
-            <artifactId>ognl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-tiles-plugin</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--spring jdbc 包括  核心   core  context tx beans-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.caucho</groupId>
-            <artifactId>hessian</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc14</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
+        <!--spring webmvc-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <!--整合mybatis-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-freightinterface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-matforstl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlbillmaterial</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-freightinterface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlcharge</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlcnet</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.directwebremoting</groupId>
+            <artifactId>dwr</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlcommon</artifactId>
+            <groupId>com.reywong.tool</groupId>
+            <artifactId>tagui-business-tag</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stldelivery</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stldeliveryopercharge</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stldeliveryres</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlinforservicefee</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlmdmcommon</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlmessage</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stloperation</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlreceipt</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlresignaction</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlservicecommon</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlspecialcustomer</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>stlthemeendcost-business-stlsupport</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>serverframework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>sso-jingang</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>core-frameworkimpl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>core-login</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>core-log</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>core-main</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>core-mdmzeromq</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>core-redisclient</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>core-zeromq</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-exp</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-freight</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-mat</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-mdm</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-mdmredis</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>commons-stl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.yto56.coresystem.stl</groupId>
-            <artifactId>ratelimit-jinggang</artifactId>
+            <groupId>com.reywong.tool</groupId>
+            <artifactId>tagui-business-framework</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
 
     <build>
-        <finalName>stlthemeendcost-stl</finalName>
+        <finalName>tagui-admin</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

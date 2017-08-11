@@ -1,7 +1,7 @@
 package com.reywong.tool.tagui.logic.framework.dao;
 
-import com.yxtc.framework.platform.pojo.framework.UserInfo;
-import com.yxtc.framework.platform.pojo.framework.UserInfoKey;
+import com.reywong.tool.tagui.logic.framework.domain.framework.UserInfo;
+import com.reywong.tool.tagui.logic.framework.domain.framework.UserInfoKey;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 

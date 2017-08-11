@@ -9,38 +9,14 @@
 	http://www.springframework.org/schema/task
 	http://www.springframework.org/schema/task/spring-task.xsd">
 
-    <bean id="SpringUtil" class="com.yxtc.framework.platform.util.SpringUtil"/>
+    <bean id="SpringUtil" class="com.reywong.tool.tagui.common.core.util.SpringUtil"/>
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.yxtc.framework.platform.service"/>
+    <context:component-scan base-package="com.reywong.tool.tagui.business"/>
     <task:annotation-driven/>
-    <context:component-scan base-package="com.yxtc.framework.platform.scheduled"/>
 
     <bean id="placeholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:config/appConfiguration.properties"/>
     </bean>
-
-
-    <!--<context:exclude-filter type="assignable" expression="com.reywong.ioc.bean.Human"></context:exclude-filter>-->
-    <!--</context:component-scan>-->
-
-    <!--<aop:advisor>定义一个AOP通知者-->
-    <!--<aop:after>后通知-->
-    <!--<aop:after-returning>返回后通知-->
-    <!--<aop:after-throwing>抛出后通知-->
-    <!--<aop:around>周围通知-->
-    <!--<aop:aspect>定义一个切面-->
-    <!--<aop:before>前通知-->
-    <!--<aop:config>顶级配置元素，类似于<beans>这种东西-->
-    <!--<aop:pointcut>定义一个切点-->
-
-    <!--<aop:config>-->
-    <!--<aop:aspect ref="projectInfo">-->
-    <!--<aop:pointcut id="businessService"-->
-    <!--expression="execution(* com.reywong.ioc.bean.Project.*(..))"/>-->
-    <!--<aop:before method="startProject" pointcut-ref="businessService"/>-->
-    <!--<aop:after method="endProject" pointcut-ref="businessService"/>-->
-    <!--</aop:aspect>-->
-    <!--</aop:config>-->
 
 </beans>

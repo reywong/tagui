@@ -6,16 +6,16 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
-    <context:component-scan base-package="com.yxtc.framework.platform.mapper"/>
+    <context:component-scan base-package="com.reywong.tool.tagui.logic.framework.dao"/>
     <!--配置数据源-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath:mapper/**/*.xml"/>
+        <property name="mapperLocations" value="classpath:**/*.xml"/>
     </bean>
 
     <!--mybatis映射配置路径-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.yxtc.framework.platform.mapper"/>
+        <property name="basePackage" value="com.reywong.tool.tagui.logic.framework.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

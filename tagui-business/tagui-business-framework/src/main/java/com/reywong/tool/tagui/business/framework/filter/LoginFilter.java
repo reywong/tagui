@@ -1,6 +1,6 @@
 package com.reywong.tool.tagui.business.framework.filter;
 
-import com.yxtc.framework.platform.pojo.framework.UserInfoBean;
+import com.reywong.tool.tagui.logic.framework.domain.framework.UserInfoBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.filter.OncePerRequestFilter;
 

@@ -28,14 +28,14 @@
             <param name="beanName" value="menuRightAction"></param>
         </create>
 
-        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.Menu"></convert>
-        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.MenuInfo"></convert>
-        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.UserRole"></convert>
-        <convert converter="bean" match="com.yxtc.framework.platform.pojo.ReturnInfoBean"></convert>
-        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.ParamInfo"></convert>
-        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.UserInfo"></convert>
-        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.RoleInfo"></convert>
-        <convert converter="bean" match="com.yxtc.framework.platform.pojo.framework.MenuRight"></convert>
+        <convert converter="bean" match="com.reywong.tool.tagui.logic.framework.domain.framework.Menu"></convert>
+        <convert converter="bean" match="com.reywong.tool.tagui.logic.framework.domain.framework.MenuInfo"></convert>
+        <convert converter="bean" match="com.reywong.tool.tagui.logic.framework.domain.framework.UserRole"></convert>
+        <convert converter="bean" match="com.reywong.tool.tagui.logic.framework.domain.ReturnInfoBean"></convert>
+        <convert converter="bean" match="com.reywong.tool.tagui.logic.framework.domain.framework.ParamInfo"></convert>
+        <convert converter="bean" match="com.reywong.tool.tagui.logic.framework.domain.framework.UserInfo"></convert>
+        <convert converter="bean" match="com.reywong.tool.tagui.logic.framework.domain.framework.RoleInfo"></convert>
+        <convert converter="bean" match="com.reywong.tool.tagui.logic.framework.domain.framework.MenuRight"></convert>
 
     </allow>
     <signatures>

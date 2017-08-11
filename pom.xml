@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.reywong.tool</groupId>
-    <artifactId>tagUI</artifactId>
+    <artifactId>tagui</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -22,6 +22,11 @@
         <org.slf4j.version>1.7.12</org.slf4j.version>
         <quartz.version>1.8.3</quartz.version>
         <com.alibaba.fastjson.version>1.1.36</com.alibaba.fastjson.version>
+        <httpclient.version>4.5.2</httpclient.version>
+        <mybatis.version>3.2.8</mybatis.version>
+        <spring.mybatis.verion>1.2.2</spring.mybatis.verion>
+        <spring.version>4.0.2.RELEASE</spring.version>
+        <dwr.version>3.0.1-RELEASE</dwr.version>
     </properties>
 
     <dependencyManagement>
@@ -112,6 +117,83 @@
                 <version>${com.alibaba.fastjson.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <!--mybatis开发包-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+
+            <!--spring jdbc 包括  核心   core  context tx beans-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!--spring webmvc-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!--整合mybatis-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${spring.mybatis.verion}</version>
+            </dependency>
+
+            <!--数据库连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.1.2</version>
+            </dependency>
+
+            <!--dwr-->
+            <dependency>
+                <groupId>org.directwebremoting</groupId>
+                <artifactId>dwr</artifactId>
+                <version>${dwr.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -124,6 +206,7 @@
                 <includes>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
+                    <include>**/*.tld</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
@@ -173,8 +256,10 @@
     </distributionManagement>
 
     <modules>
-        <module></module>
-
+        <module>tagui-common</module>
+        <module>tagui-logic</module>
+        <module>tagui-business</module>
+        <module>tagui-application</module>
     </modules>
 
 </project>

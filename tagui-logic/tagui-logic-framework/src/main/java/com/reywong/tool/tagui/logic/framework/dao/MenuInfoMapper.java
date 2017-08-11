@@ -1,6 +1,6 @@
 package com.reywong.tool.tagui.logic.framework.dao;
 
-import com.yxtc.framework.platform.pojo.framework.MenuInfo;
+import com.reywong.tool.tagui.logic.framework.domain.framework.MenuInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
