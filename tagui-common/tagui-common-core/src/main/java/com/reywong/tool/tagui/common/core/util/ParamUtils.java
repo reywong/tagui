@@ -1,14 +1,5 @@
 package com.reywong.tool.tagui.common.core.util;
 
-import com.yxtc.framework.platform.mapper.framework.ParamInfoMapper;
-import com.yxtc.framework.platform.pojo.core.BaiduApiStoreParam;
-import com.yxtc.framework.platform.pojo.core.BaiduOpenAPIParam;
-import com.yxtc.framework.platform.pojo.framework.ParamInfo;
-import com.yxtc.framework.platform.pojo.pay.AlipayParam;
-import com.yxtc.framework.platform.pojo.pay.WeiXinParam;
-import com.yxtc.framework.platform.pojo.util.DaYuSMSParam;
-import com.yxtc.framework.platform.pojo.util.JPushParam;
-import com.yxtc.framework.platform.service.framework.ParamInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
