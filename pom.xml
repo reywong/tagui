@@ -261,7 +261,6 @@
     </distributionManagement>
 
     <modules>
-        <module>tagui-common</module>
         <module>tagui-logic</module>
         <module>tagui-business</module>
         <module>tagui-application</module>
