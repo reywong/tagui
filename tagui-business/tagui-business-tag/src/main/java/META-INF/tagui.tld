@@ -164,4 +164,165 @@
             <rtexprvalue>false</rtexprvalue>
         </attribute>
     </tag>
+
+    <tag>
+        <description>
+            tagUI CharJsPlugin
+        </description>
+        <name>charJsPlugin</name>
+        <tag-class>com.reywong.tool.tagui.business.tag.plugin.ChartJsPluginTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>basePath</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            tagUI lineChar
+        </description>
+        <name>lineChar</name>
+        <tag-class>com.reywong.tool.tagui.business.tag.chart.LineChartTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>height</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>json</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[是否填充曲线图，默认不填充，当添加datasetFill=true为填充]]></description>
+            <name>datasetFill</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            tagUI barChar
+        </description>
+        <name>barChar</name>
+        <tag-class>com.reywong.tool.tagui.business.tag.chart.BarChartTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>height</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>json</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            tagUI polarChart
+        </description>
+        <name>polarChart</name>
+        <tag-class>com.reywong.tool.tagui.business.tag.chart.PolarChartTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>height</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>json</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <description>
+            tagUI polarChart
+        </description>
+        <name>pieChart</name>
+        <tag-class>com.reywong.tool.tagui.business.tag.chart.PieChartTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>height</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[饼图镂空比例，如45]]></description>
+            <name>fillPercent</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>json</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <description>
+            tagUI barChar
+        </description>
+        <name>radarChar</name>
+        <tag-class>com.reywong.tool.tagui.business.tag.chart.RadarChartTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>height</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description><![CDATA[]]></description>
+            <name>json</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
 </taglib>
