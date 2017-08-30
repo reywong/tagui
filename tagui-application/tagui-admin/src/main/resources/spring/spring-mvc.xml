@@ -14,7 +14,7 @@
 
     <!-- 扫描controller（controller层注入） -->
     <context:annotation-config/>
-    <context:component-scan base-package="com.reywong.tool.tagui.business.framework.controller"/>
+    <context:component-scan base-package="com.reywong.tool.tagui.business.controller"/>
 
     <!--访问静态资源-->
     <mvc:annotation-driven/>
@@ -22,8 +22,7 @@
     <mvc:resources mapping="/demo/**" location="/demo/"/>
     <!-- 对模型视图添加前后缀 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass"
-                  value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/pages/"/>
         <property name="suffix" value=".jsp"></property>
     </bean>

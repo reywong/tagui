@@ -249,15 +249,9 @@
 
     <distributionManagement>
         <repository>
-            <id>yto56.coresystem.release</id>
-            <name>stl-release</name>
-            <url>http://10.1.208.135:8081/nexus/content/repositories/releases/</url>
+            <id>reywong-mvn-repo</id>
+            <url>file:D://maven-github/code/maven-repo/repository/</url>
         </repository>
-        <snapshotRepository>
-            <id>yto56.coresystem.snapshot</id>
-            <name>stl-snapshot</name>
-            <url>http://10.1.208.135:8081/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <modules>

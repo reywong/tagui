@@ -8,15 +8,12 @@
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd
 	http://www.springframework.org/schema/task
 	http://www.springframework.org/schema/task/spring-task.xsd">
-
-    <bean id="SpringUtil" class="com.reywong.tool.tagui.common.core.util.SpringUtil"/>
-
     <context:annotation-config/>
     <context:component-scan base-package="com.reywong.tool.tagui.business"/>
     <task:annotation-driven/>
 
     <bean id="placeholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:config/appConfiguration.properties"/>
+        <property name="location" value="classpath:application.properties"/>
     </bean>
 
 </beans>
