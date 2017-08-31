@@ -1,12 +1,11 @@
+<%@ page import="com.alibaba.fastjson.JSON" %>
 <%@ page import="com.reywong.tool.tagui.business.bean.MenuBean" %>
+<%@ page import="com.reywong.tool.tagui.business.bean.chart.ChartBean" %>
+<%@ page import="com.reywong.tool.tagui.business.bean.chart.ChartSetBean" %>
+<%@ page import="com.reywong.tool.tagui.business.bean.chart.PolarCharSetBean" %>
+<%@ page import="com.reywong.tool.tagui.business.bean.chart.PolarChartBean" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.alibaba.fastjson.JSON" %>
-<%@ page import="com.reywong.tool.tagui.business.bean.chart.ChartBean" %>
-<%@ page import="java.util.HashMap" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="com.reywong.tool.tagui.business.bean.chart.PolarChartBean" %>
-<%@ page import="com.reywong.tool.tagui.business.bean.chart.PolarCharSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/include/header.jsp" %>
 <!DOCTYPE html>
@@ -54,32 +53,35 @@
     ChartBean chartBean = new ChartBean();
     chartBean.setLabels(new String[]{"January", "February", "March", "April", "May", "June", "July"});
     Integer[] lineData = new Integer[]{65, 59, 80, 81, 56, 55, 40};
-    Map<String, Integer[]> lineMap = new HashMap<String, Integer[]>();
-    lineMap.put("myData", lineData);
+    ChartSetBean lineMap = new ChartSetBean();
+    lineMap.setLabel("myData");
+    lineMap.setDatas(lineData);
     lineList.add(lineMap);
-    lineMap = new HashMap<String, Integer[]>();
+    lineMap = new ChartSetBean();
     lineData = new Integer[]{28, 48, 40, 19, 86, 27, 90};
-    lineMap.put("myData1", lineData);
+    lineMap.setLabel("myData1");
+    lineMap.setDatas(lineData);
     lineList.add(lineMap);
     chartBean.setDatas(lineList);
-
+    System.out.println("charBean=" + JSON.toJSONString(chartBean));
 %>
 <%
     PolarChartBean polarChartBean = new PolarChartBean();
-    List<PolarCharSet> polarCharSetList = new ArrayList<PolarCharSet>();
-    PolarCharSet polarCharSet = new PolarCharSet();
+    List<PolarCharSetBean> polarCharSetList = new ArrayList<PolarCharSetBean>();
+    PolarCharSetBean polarCharSet = new PolarCharSetBean();
     polarCharSet.setLabel("App");
     polarCharSet.setValue(300);
     polarCharSetList.add(polarCharSet);
-    polarCharSet = new PolarCharSet();
+    polarCharSet = new PolarCharSetBean();
     polarCharSet.setLabel("App1");
     polarCharSet.setValue(140);
     polarCharSetList.add(polarCharSet);
-    polarCharSet = new PolarCharSet();
+    polarCharSet = new PolarCharSetBean();
     polarCharSet.setLabel("App2");
     polarCharSet.setValue(200);
     polarCharSetList.add(polarCharSet);
     polarChartBean.setDatas(polarCharSetList);
+    System.out.println("polarChartBean=" + JSON.toJSONString(polarChartBean));
 %>
 
 <tagUI:wrapper>
@@ -141,6 +143,14 @@
                     <tagUI:pieChart id="pieChart" fillPercent="20" json="<%=JSON.toJSONString(polarChartBean)%>"/>
                 </tagUI:col>
             </tagUI:row>
+            <tagUI:row>
+                <tagUI:col colNum="6" title="dddddddddd">
+                    <div>
+                        <canvas id="rey" height="140"></canvas>
+                    </div>
+                </tagUI:col>
+
+            </tagUI:row>
         </tagUI:pageContent>
         <!--end content-->
 
@@ -151,6 +161,8 @@
 
     </tagUI:pageWrapper>
 </tagUI:wrapper>
-
+<%--<script type="application/javascript">--%>
+    <%--tagUI_linechart('rey', <%=JSON.toJSONString(chartBean)%>, true)--%>
+<%--</script>--%>
 </body>
 </html>

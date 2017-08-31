@@ -1,16 +1,15 @@
 package com.reywong.tool.tagui.business.bean.chart;
 
 import java.util.List;
-import java.util.Map;
 
 public class PolarChartBean {
-    private List<PolarCharSet> datas;
+    private List<PolarCharSetBean> datas;
 
-    public List<PolarCharSet> getDatas() {
+    public List<PolarCharSetBean> getDatas() {
         return datas;
     }
 
-    public void setDatas(List<PolarCharSet> datas) {
+    public void setDatas(List<PolarCharSetBean> datas) {
         this.datas = datas;
     }
 

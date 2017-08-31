@@ -1,7 +1,6 @@
 package com.reywong.tool.tagui.business.bean.chart;
 
 import java.util.List;
-import java.util.Map;
 
 public class ChartBean {
     /**
@@ -12,7 +11,7 @@ public class ChartBean {
     /**
      * string 为每组数据的label,Integer 为数据，与labels数量对应
      */
-    private List<Map<String, Integer[]>> datas;
+    private List<ChartSetBean> datas;
 
     public String[] getLabels() {
         return labels;
@@ -22,11 +21,11 @@ public class ChartBean {
         this.labels = labels;
     }
 
-    public List<Map<String, Integer[]>> getDatas() {
+    public List<ChartSetBean> getDatas() {
         return datas;
     }
 
-    public void setDatas(List<Map<String, Integer[]>> datas) {
+    public void setDatas(List<ChartSetBean> datas) {
         this.datas = datas;
     }
 }

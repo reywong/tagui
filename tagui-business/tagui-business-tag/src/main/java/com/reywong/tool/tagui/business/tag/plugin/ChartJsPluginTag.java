@@ -26,6 +26,7 @@ public class ChartJsPluginTag extends TagSupport {
             }
             path += basePath;
             html.append("<script src=\"" + path + "/js/plugins/chartJs/Chart.min.js\"></script>\n");
+            html.append("<script src=\"" + path + "/tagui/tagui_chartjs.js\"></script>\n");
             out.println(html);
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

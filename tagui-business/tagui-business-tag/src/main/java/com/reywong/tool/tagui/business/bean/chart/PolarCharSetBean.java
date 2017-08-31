@@ -1,6 +1,6 @@
 package com.reywong.tool.tagui.business.bean.chart;
 
-public class PolarCharSet {
+public class PolarCharSetBean {
     private String label;
     private Integer value;
     private String color;
